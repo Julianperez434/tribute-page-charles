@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+// RESET
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// COLOR THEME
+
+$bg-color: #151414;
+$text-accent-color: #fff;
+$text-color: #7A7A7A;
+
+// MAIN
+
+html {
+  font-family: 'Poppins', sans-serif;
+  color: $text-color;
+}
+
+body {
+  background-color: $bg-color;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & .left-container {
+    width: 40%;
+  }
+  & .right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 4em;
+    width: 60%;
+    height: 100vh;
+    padding: 10em 5em 5em 0;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  & h1 {
+    color: $text-accent-color;
+    font-size: 2.5rem;
+    font-weigth: 200;
+  }
+  & p {
+    font-size: 1.5rem;
+  }
+}
+
+section p {
+  text-align: justify;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.left-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 100%;
+  filter: brightness(0.75);
+  transition: all 0.15s ease;
+  animation: floatingImg 2s infinite alternate;
+  cursor: pointer;
+}
+
+figcaption {
+  display: none;
+}
+
+a {
+  color: $text-accent-color;
+  &:visited {
+    color: $text-accent-color;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@keyframes floatingImg {
+  0% {
+    transform: translateY(-1em);
+  }
+  100% {
+    transform: translateY(1em);
+  }
+}
+
+// RESPONSIVE
+
+@media screen and (max-width: 800px) {
+  main {
+    flex-direction: column;
+  }
+  picture {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
